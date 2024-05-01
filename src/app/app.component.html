@@ -1,0 +1,15 @@
+<ion-app>
+  <div #header class="h-4rem">
+    <app-header *ngIf="canShowHeader"></app-header>
+  </div>
+
+  <ion-router-outlet
+    class="flex align-items-center"
+    [style.margin-bottom]="canShowNavbar ? footer.offsetHeight + 'px' : '0px'"
+    [style.margin-top]="canShowHeader ? header.offsetHeight + 'px' : '0px'"
+  ></ion-router-outlet>
+  
+  <div #footer class="h-4rem">
+    <app-menu *ngIf="canShowNavbar"></app-menu>
+  </div>
+</ion-app>

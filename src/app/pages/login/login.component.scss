@@ -1,0 +1,22 @@
+section {
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #ebeaea !important;
+
+  .card {
+    width: 90vw;
+    padding: 2rem 3rem;
+    transform: translateY(-5rem);
+  }
+}
+
+.background {
+  width: 100vw;
+  height: 40vh;
+  background: no-repeat url('../../../assets/images/image-login-backgroun.png');
+}
+
+ion-button {
+  background-color: #0da7cb !important;
+}
