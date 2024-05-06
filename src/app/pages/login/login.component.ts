@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { canEffectuateLogin } from '../../utils/functions';
+import { canEffectuateLogin } from '../../shared/utils/functions';
 
 @Component({
   selector: 'app-login',
