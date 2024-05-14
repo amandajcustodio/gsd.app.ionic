@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alert-modal',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
     [style.height.vh]="100"
   >
     <div class="absolute top-0 right-0 mr-4 mt-4">
-      <ion-icon class="text-5xl" name="close-outline"> </ion-icon>
+      <ion-icon class="text-5xl" name="close-outline" (click)="close()">
+      </ion-icon>
     </div>
     <div class="my-0">
       <ion-icon style="font-size: 10rem" name="warning-outline"> </ion-icon>
@@ -18,8 +20,18 @@ import { Component, OnInit } from '@angular/core';
     </div>
   </div>`,
 })
-export class AlertModalComponent implements OnInit {
-  constructor() {}
+export class AlertModalComponent {
+  //#region Constructor
 
-  ngOnInit() {}
+  constructor(private modalController: ModalController) {}
+
+  //#endregion
+
+  //#region Public Methods
+
+  public async close(): Promise<void> {
+    await this.modalController.dismiss();
+  }
+
+  //#endregion
 }
