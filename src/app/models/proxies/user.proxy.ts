@@ -7,4 +7,5 @@ export interface UserProxy {
   address: string;
   emergencyContact: string;
   emergencyContactName: string;
+  imageUrl?: string;
 }

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LeakHistoryProxy } from '../../../models/proxies/leak-history.proxy';
 import { mockedLeakHistoryProxy } from '../../../models/mocks/leak-history.mock';
+import { AlertModalComponent } from '../../../modals/alert-modal/alert-modal.component';
+import { ModalService } from '../../../services/modal/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -15,16 +17,31 @@ import { mockedLeakHistoryProxy } from '../../../models/mocks/leak-history.mock'
     </ion-content>
   `,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  //#region Constructor
+
+  constructor(
+    private readonly modalService: ModalService
+  ) {}
+
+  //#endregion
+
   //#region Public Properties
 
   public cards: LeakHistoryProxy[] = mockedLeakHistoryProxy;
 
   public sliceIndex: number = 2;
 
+  public showAlert: boolean = true;
+
   //#endregion
 
   //#region Public Methods
+
+  public ngOnInit(): void {
+    if (this.showAlert)
+      this.openModal();
+  }
 
   public changeSliceIndex(): void {
     if (this.sliceIndex !== 2) {
@@ -35,5 +52,11 @@ export class HomeComponent {
     this.sliceIndex = this.cards.length;
   }
 
+  public async openModal(): Promise<void> {
+    const resultado = await this.modalService.open(
+      AlertModalComponent,
+      {}
+    );
+  }
   //#endregion
 }
