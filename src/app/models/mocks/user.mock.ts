@@ -9,7 +9,7 @@ export const mockedUserProxy: UserProxy[] = [
     name: "João Silva",
     email: "joao.silva@example.com",
     address: "Rua das Flores, 123",
-    emergencyContact: "5511999998888",
+    emergencyContact: "+55 (11) 9999-9988",
     emergencyContactName: "Maria Silva"
   },
   {

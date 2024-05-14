@@ -6,6 +6,9 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { StatusHistoryCardModule } from '../../../components/status-history-card/status-history-card.module';
 import { FusionChartsModule } from "angular-fusioncharts";
+import { AlertModalModule } from '../../../modals/alert-modal/alert-modal.module';
+import { ModalService } from '../../../services/modal/modal.service';
+import { ModalController } from '@ionic/angular/standalone';
 
 
 @NgModule({
@@ -15,12 +18,17 @@ import { FusionChartsModule } from "angular-fusioncharts";
     IonicModule,
     HomeRoutingModule,
     StatusHistoryCardModule,
+    AlertModalModule
   ],
   declarations: [
     HomeComponent,
   ],
   exports: [
     HomeComponent,
+  ],
+  providers: [
+    ModalService,
+    ModalController,
   ]
 })
 export class HomeModule { }
