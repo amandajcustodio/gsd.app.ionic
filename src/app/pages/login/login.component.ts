@@ -29,7 +29,6 @@ import { canEffectuateLogin } from '../../shared/utils/functions';
               [(ngModel)]="cpf"
               label="CPF"
               labelPlacement="stacked"
-              fill="outline"
             ></ion-input>
           </ion-item>
           <ion-item>
@@ -38,7 +37,6 @@ import { canEffectuateLogin } from '../../shared/utils/functions';
               labelPlacement="stacked"
               [(ngModel)]="password"
               [type]="showPassword ? 'text' : 'password'"
-              fill="outline"
             ></ion-input>
             <ion-icon
               (click)="showPassword = !showPassword"
